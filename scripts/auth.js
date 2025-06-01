@@ -25,11 +25,11 @@ function isSessionValid() {
 }
 
 function logout() {
-//  localStorage.removeItem(SESSION_KEY);
-//  location.reload(); // 페이지 새로고침
-  localStorage.removeItem("loginTimestamp");
-  localStorage.removeItem("loginHash");
-  location.reload();
+  localStorage.removeItem(SESSION_KEY);
+  location.reload(); // 페이지 새로고침
+//  localStorage.removeItem("loginTimestamp");
+//  localStorage.removeItem("loginHash");
+//  location.reload();
 }
 
 function checkPassword() {
