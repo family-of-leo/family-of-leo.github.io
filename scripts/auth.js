@@ -1,4 +1,4 @@
-const correctHash = "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f";
+const correctHash = "ebba4656472f21ef2e19a0a5e84306137a9738a7cb7f23cc8f49f3b1014f5f4b";
 
 
 async function checkPassword() {
