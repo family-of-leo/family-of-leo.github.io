@@ -9,6 +9,7 @@
 
 .gallery img {
   width: 100%;
+  max-width: 66vw;
   height: auto;
   border-radius: 8px;
   object-fit: cover;
