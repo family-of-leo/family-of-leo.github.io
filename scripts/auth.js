@@ -1,4 +1,5 @@
-const correctHash = "2c3b70ef82f3f73dd1c67869e54fe604d63d994d57c93c2d1c6dc6f7c9ae582e";
+const correctHash = "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f";
+
 
 async function checkPassword() {
   const input = document.getElementById("password").value;
