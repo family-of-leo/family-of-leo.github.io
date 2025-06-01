@@ -1,4 +1,5 @@
-const correctHash = "ebba4656472f21ef2e19a0a5e84306137a9738a7cb7f23cc8f49f3b1014f5f4b"; // family1212
+const correctHash = "bcb072a82e2c420458dd48584a57f8cb7bbea821bfaed1c40aa802e542cd92b7";
+
 
 function checkPassword() {
   const input = document.getElementById("password").value.trim();
