@@ -2,30 +2,36 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>가족 신문</title>
-  <!-- 🔽 외부 스타일 파일 연결 -->
   <link rel="stylesheet" href="styles/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/js-sha256@0.9.0/build/sha256.min.js"></script>
+  <script src="scripts/auth.js" defer></script>
 </head>
 <body>
   <div id="login">
-    <h2>접속 인증</h2>
+    <h2>비밀번호를 입력하세요</h2>
     <input type="password" id="password" placeholder="비밀번호 입력" />
     <button onclick="checkPassword()">확인</button>
     <p id="errorMsg" style="color: red;"></p>
   </div>
 
   <div id="content" class="hidden">
-    <h1>가족 신문 - 목차</h1>
+    <h1>가족 신문 목차</h1>
     <ul>
-      <li><a href="20250601/index.html">2025-06-01</a></li>
-      <li><a href="#">2025-06-05</a></li>
+      <li><a href="20250601/main.html">2025-06-01</a></li>
+      <li><a href="20250605/main.html">2025-06-05</a></li>
     </ul>
   </div>
 
-  <!-- 🔽 외부 JS 연결 -->
-  <script src="scripts/auth.js"></script>
+  <script>
+    document.getElementById("password").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        checkPassword();
+      }
+    });
+  </script>
 </body>
 </html>
 
