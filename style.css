@@ -86,3 +86,21 @@ h2 {
   }
 }
 
+.btn-logout {
+  display: inline-block;
+  padding: 10px 24px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff5c5c;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #e04e4e;
+}
+

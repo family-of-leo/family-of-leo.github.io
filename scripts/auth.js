@@ -25,8 +25,11 @@ function isSessionValid() {
 }
 
 function logout() {
-  localStorage.removeItem(SESSION_KEY);
-  location.reload(); // 페이지 새로고침
+//  localStorage.removeItem(SESSION_KEY);
+//  location.reload(); // 페이지 새로고침
+  localStorage.removeItem("loginTimestamp");
+  localStorage.removeItem("loginHash");
+  location.reload();
 }
 
 function checkPassword() {
@@ -71,7 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 로그아웃 버튼 처리
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
-    logoutBtn.addEventListener("click", logout);
+//    logoutBtn.addEventListener("click", logout);
+    logoutBtn.addEventListener("click", () => {
+      logout();
+    });
   }
 });
 
