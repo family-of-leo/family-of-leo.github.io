@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>가족 신문</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- 🔽 외부 스타일 파일 연결 -->
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header>
-    <h1>가족 신문</h1>
-    <p>우리 가족의 이야기를 담은 신문</p>
-  </header>
-  <main>
-    <h2>📅 기사 목록</h2>
-    <ul class="article-list">
+  <div id="login">
+    <h2>접속 인증</h2>
+    <input type="password" id="password" placeholder="비밀번호 입력" />
+    <button onclick="checkPassword()">확인</button>
+    <p id="errorMsg" style="color: red;"></p>
+  </div>
+
+  <div id="content" class="hidden">
+    <h1>가족 신문 - 목차</h1>
+    <ul>
       <li><a href="20250601/index.html">2025-06-01</a></li>
-<!--
-      <li><a href="20250605/index.html">2025-06-05</a></li>
--->
+      <li><a href="#">2025-06-05</a></li>
     </ul>
-  </main>
+  </div>
+
+  <!-- 🔽 외부 JS 연결 -->
+  <script src="scripts/auth.js"></script>
 </body>
 </html>
 
