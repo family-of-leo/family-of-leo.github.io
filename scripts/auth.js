@@ -3,7 +3,6 @@ const SESSION_KEY = "familyNewsAuthTime";
 const SESSION_DURATION_MS = 10 * 60 * 1000; // 10분
 
 function sha256(str) {
-  // 브라우저에서 제공하는 SubtleCrypto 사용
   const encoder = new TextEncoder();
   const data = encoder.encode(str);
   return crypto.subtle.digest("SHA-256", data).then((hashBuffer) => {
@@ -27,18 +26,12 @@ function isSessionValid() {
 function logout() {
   localStorage.removeItem(SESSION_KEY);
   location.reload(); // 페이지 새로고침
-//  localStorage.removeItem("loginTimestamp");
-//  localStorage.removeItem("loginHash");
-//  location.reload();
 }
 
 function checkPassword() {
   const input = document.getElementById("password").value.trim();
 
   sha256(input).then(hash => {
-    console.log("입력된 비밀번호:", input);
-    console.log("입력된 해시값:", hash);
-    console.log("정답 해시값:", correctHash);
 
     if (hash === correctHash) {
       setSession();
@@ -57,7 +50,7 @@ function checkSession() {
   }
 }
 
-// 🔁 DOM이 준비되면 자동으로 세션 검사 실행
+// DOM이 준비되면 자동으로 세션 검사 실행
 document.addEventListener("DOMContentLoaded", () => {
   checkSession();
 
@@ -74,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 로그아웃 버튼 처리
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
-//    logoutBtn.addEventListener("click", logout);
     logoutBtn.addEventListener("click", () => {
       logout();
     });
