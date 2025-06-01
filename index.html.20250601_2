@@ -17,19 +17,11 @@
   </div>
 
   <div id="content" class="hidden">
-    <header>
-      <h1>가족 신문</h1>
-      <p>우리 가족의 이야기를 담은 신문</p>
-    </header>
-    <main>
-      <h2>📅 기사 목록</h2>
-      <ul class="article-list">
-        <li><a href="20250601/index.html">2025-06-01</a></li>
-<!--
-      <li><a href="20250605/index.html">2025-06-05</a></li>
--->
-      </ul>
-    </main>
+    <h1>가족 신문 목차</h1>
+    <ul>
+      <li><a href="20250601/main.html">2025-06-01</a></li>
+      <li><a href="20250605/main.html">2025-06-05</a></li>
+    </ul>
   </div>
 
   <script>
