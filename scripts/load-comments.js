@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const commentsList = document.getElementById("commentsList");
 
-  fetch("https://script.google.com/macros/s/AKfycby4GGQl8bIQl8lOPumbQl2DbNsJJ7Rw6BaQjq0cLzXle-8WNZ4NFCRyMu8ehIRb5_YS/exec")
+  fetch("https://script.google.com/macros/s/AKfycbwe2pcsluAY2U_-1GPv_JhJg9ekF-uholO7PZm0HXTCvGIImpz36caTZHcgNMdzIdSY/exec")
     .then(res => res.json())
     .then(data => {
       if (!Array.isArray(data)) {
