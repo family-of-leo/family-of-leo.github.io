@@ -1,31 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("comments-container");
+  const commentsList = document.getElementById("commentsList");
 
-  fetch("https://script.google.com/macros/s/AKfycbyCRaXMmm-DN6_qF5jjCSHMcMv9OIK1lF5GFuLRPfg2f0AdZ1wAN1KJ11Wr6kng_K7l/exec")
-    .then(response => {
-      if (!response.ok) throw new Error("댓글 데이터를 가져오지 못했습니다.");
-      return response.json();
-    })
+  fetch("https://script.google.com/macros/s/AKfycby4GGQl8bIQl8lOPumbQl2DbNsJJ7Rw6BaQjq0cLzXle-8WNZ4NFCRyMu8ehIRb5_YS/exec")
+    .then(res => res.json())
     .then(data => {
-      container.innerHTML = "";
-      if (data.length === 0) {
-        container.innerHTML = "<p>아직 댓글이 없습니다.</p>";
-        return;
+      if (!Array.isArray(data)) {
+        throw new Error("응답 데이터가 배열이 아닙니다.");
       }
 
+      commentsList.innerHTML = "";
       data.forEach(comment => {
-        const div = document.createElement("div");
-        div.className = "comment-item";
-        div.innerHTML = `
-          <p><strong>${comment.name}</strong> <em style="color:#777">${comment.timestamp}</em></p>
-          <p>${comment.comment}</p>
-          <hr/>
-        `;
-        container.appendChild(div);
+        const el = document.createElement("div");
+        el.className = "comment";
+        el.innerHTML = `<p><strong>${comment.name}</strong>: ${comment.comment}</p><p class="timestamp">${comment.timestamp}</p>`;
+        commentsList.appendChild(el);
       });
     })
-    .catch(error => {
-      console.error(error);
-      container.innerHTML = "<p style='color:red;'>댓글을 불러오는 중 오류가 발생했습니다.</p>";
+    .catch(err => {
+      console.error("댓글 불러오기 실패:", err);
+      commentsList.innerHTML = "<p>댓글을 불러오는 데 실패했습니다.</p>";
     });
 });
